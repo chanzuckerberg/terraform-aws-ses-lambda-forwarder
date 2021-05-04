@@ -65,6 +65,12 @@ variable "access_log_bucket_name" {
   description = "Name of the S3 bucket where s3 access log will be sent to"
 }
 
+variable "allow_plus_sign" {
+  type        = bool
+  default     = true
+  description = "Allow plus sign wildcard suffixes in email addresses. For example: foo+some-unique-string@foobar.com will match the key foo@foobar.com in forward_emails."
+}
+
 variable "s3_bucket_encryption_enabled" {
   type        = bool
   default     = true

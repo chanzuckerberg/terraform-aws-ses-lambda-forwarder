@@ -87,6 +87,7 @@ resource "aws_lambda_function" "default" {
   environment {
     variables = {
       EMAIL_FROM        = var.relay_email
+      ALLOW_PLUS_SIGN   = var.allow_plus_sign
       EMAIL_BUCKET_NAME = aws_s3_bucket.default.bucket
       EMAIL_BUCKET_PATH = ""
       EMAIL_MAPPING     = jsonencode(var.forward_emails)
